@@ -1,0 +1,21 @@
+p.box {
+  margin-left: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: solid 1px;
+  padding: 10px;
+  background-color: #ccccff;
+}
+
+pre.box {
+  margin-left: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: solid 1px;
+  padding: 10px;
+  background-color: #ccccff;
+}
+
+span.red {
+  color: #ff0000;
+}

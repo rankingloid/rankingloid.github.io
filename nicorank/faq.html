@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>ニコニコランキングメーカー配布サイト</title>
+<meta name="keywords" content="ニコニコランキングメーカー" />
+<meta name="description" content="ニコニコランキングメーカー配布サイト" />
+<link href="default.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+<div id="head">
+<h1><a href="./index.html">ニコニコランキングメーカー配布サイト</a></h1>
+<p></p>
+</div>
+
+<div id="contents">
+<div id="left_menu">
+<p class="title">メニュー</p>
+<ul>
+<li><a href="index.html">トップページ</a></li>
+<li><a href="http://sourceforge.jp/projects/nicorank/releases/">ダウンロード</a></li>
+<li><a href="screenshot.html">スクリーンショット</a></li>
+<li><a href="http://dic.nicovideo.jp/a/%E6%97%A5%E5%88%8A%E3%81%9F%E3%82%93">ニコニコ大百科の記事</a></li>
+<li><a href="manual.html">マニュアル</a></li>
+<li><a href="faq.html">FAQ</a></li>
+<li><a href="history.html">更新履歴</a></li>
+<li><a href="sample.html">フレーム画像サンプル</a></li>
+</ul>
+<p class="title">サイトメニュー</p>
+<ul>
+<li><a href="../index.html">サイトトップ</a></li>
+<li><a href="../nicorank/index.html">ニコニコランキングメーカー</a></li>
+</ul>
+</div>
+
+
+<div id="main">
+<div id="main_inner">
+<h2>FAQ</h2>
+
+<p><b>Q1.</b> 指定した期間（例：2010年01月01日～2010年06月30日）の間だけを集計したランキングを作りたい</p>
+<p><b>A1.</b> 2010年01月01日にタグ検索を行い、2010年06月30日にもう一度検索を行い、両方のリストの差分を取る方法で作ることができます。
+もちろん、2010年01月01日のタグ検索は2010年01月01日に行う必要があります。</p>
+<p>ニコニコ動画から過去の時点のポイント数を取得する機能が（ニコニコ動画に）ないため、これ以外の方法では難しいです。</p>
+<p>ニコニコ動画公式で発表されるランキングは過去の分も取得できますが、ニコニコランキングメーカーでは対応していません。</p>
+<hr>
+<p><b>Q2.</b> AVI動画変換で生成されたaviがメディアプレーヤー等で見れない</p>
+<p><b>A2.</b> avi生成のオプションを確認してください。ffdshow等のコーデックが必要な場合もあります。</p>
+<hr>
+<p><b>Q3.</b> ノーマライズ、フェードインができない</p>
+<p><b>A3.</b> <a href="http://hp.vector.co.jp/authors/VA014492/manual/waveflt2.htm">WAVEFLT2</a>が必要です。プログラムをダウンロード後、設定タブで設定してください。</p>
+<hr>
+<p><b>Q4.</b> 一度に複数のタグを、動画の重複なく検索したい</p>
+<p><b>A4.</b> 「ワード1 or ワード2 or ワード3」のように or で区切って一行で入力すると、複数のタグを一度に検索できます（ニコニコ動画の機能）。</p>
+<hr>
+<p><b>Q5.</b> Windows Vista でリスト作成時に「パス：C:\... の一部が存在しません」というエラーが出る</p>
+<p><b>A5.</b> Vista のファイル作成権限の問題です。プログラム全体をドキュメントフォルダに置いて試してください。</p>
+</div><!-- main_inner end -->
+</div><!-- main end -->
+
+
+
+</div>
+<div id="foot_up"> </div>
+<div id="foot">copyright (c)<script type="text/javascript">document.write(new Date().getFullYear())</script> rankingloid All rights reserved.
+<!--↓著作権表示 削除しないでください↓-->
+<a href="http://pondt.com/" target="_blank">css by pondt</a>
+</div>
+</body>
+</html>

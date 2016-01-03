@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>ランクファイルのカスタマイズ機能</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+<h1>ランクファイルのカスタマイズ機能</h1>
+<p>ランクファイルの項目並び順は自由にカスタマイズすることができます。この機能は Ver 0.99.3 以降でサポートされています。</p>
+<h2>カスタマイズ機能を使うには</h2>
+<p>「上級者向け」タブの「ランクファイルをカスタマイズする」チェックボックスにチェックを入れます。</p>
+<p>入力書式、出力書式のテキストボックスに書式を設定します。入力（読み込み）と出力（書き出し）を別の書式にすることができます。</p>
+<h2>カスタマイズの書式（入力、出力共通）</h2>
+<p>以下がカスタマイズの書式です。</p>
+<p><code>separator=","<br/>
+項目1<br/>
+項目2<br/>
+...
+</code></p>
+<h3>例</h3>
+<code>separator=","<br/>
+&lt;video_id/&gt;<br/>
+&lt;line_number/&gt;<br/>
+&lt;view/&gt;<br/>
+&lt;res/&gt;<br/>
+&lt;mylist/&gt;<br/>
+文字<br/>
+投稿日：&lt;date format=&quot;yyyy/MM/dd HH:mm:ss&quot;/&gt;</code>
+<h3>説明</h3>
+<p>1行目の separator は区切り文字（例ではカンマ）を表します。\t と書くとタブを表します。</p>
+<p>2行目以降はランクファイルの各項目を表します。&lt;view/&gt; などのように、
+設定・参照できる値がいくつか用意されています。
+&lt;date format="..."/&gt; のようにオプションを指定することもできます (この例では format がオプション)。</p>
+<h2>用意されている値</h2>
+<table border="1">
+  <tr>
+    <td>&lt;video_id/&gt;</td>
+    <td>動画ID</td>
+  </tr>
+  <tr>
+    <td>&lt;view/&gt;</td>
+    <td>再生数</td>
+  </tr>
+  <tr>
+    <td>&lt;res/&gt;</td>
+    <td>コメント数</td>
+  </tr>
+  <tr>
+    <td>&lt;mylist/&gt;</td>
+    <td>マイリスト数</td>
+  </tr>
+  <tr>
+    <td>&lt;line_number/&gt;</td>
+    <td>ランクファイル内での行数（順位）</td>
+  </tr>
+  <tr>
+    <td>&lt;title/&gt;</td>
+    <td>タイトル</td>
+  </tr>
+  <tr>
+    <td>&lt;date/&gt;</td>
+    <td>（投稿）日時</td>
+  </tr>
+  <tr>
+    <td>&lt;tag/&gt;</td>
+    <td>タグ</td>
+  </tr>
+  <tr>
+    <td>&lt;text/&gt;</td>
+    <td>ユーザ指定項目</td>
+  </tr>
+  <tr>
+    <td>&lt;expression/&gt;</td>
+    <td>計算式</td>
+  </tr>
+</table>
+<h2>指定できるオプション</h2>
+<h3>view, res, mylist</h3>
+<p>comma：出力する数字にカンマをつけるかを指定します(&quot;on&quot; または &quot;off&quot;)。入力時には無視されます。デフォルトでは &quot;on&quot; です。</p>
+<h3>line_number</h3>
+<p>offset：出力のとき、行数に一律に加える数字を指定します。例えば、offset=&quot;10&quot; と指定すると、11, 12, 13,... と出力されます。
+入力時には無視されます。デフォルトでは 0 です。</p>
+<h3>date</h3>
+<p>format：日時の入出力形式を指定します。例えば、&quot;yyyy/MM/dd H:m:s&quot; のように指定します。このように指定すると、2008年7月6日 5時43分21秒は &quot;2008/07/06 5:43:21&quot; と出力されます。</p>
+<p>使用できる文字</p>
+<table border="1">
+  <tr>
+    <td>yy</td>
+    <td>2桁の年</td>
+  </tr>
+  <tr>
+    <td>yyyy</td>
+    <td>4桁の年</td>
+  </tr>
+  <tr>
+    <td>M</td>
+    <td>月</td>
+  </tr>
+  <tr>
+    <td>MM</td>
+    <td>月（1桁の場合は0をつけて2桁にする）</td>
+  </tr>
+  <tr>
+    <td>d</td>
+    <td>日</td>
+  </tr>
+  <tr>
+    <td>H</td>
+    <td>時間（24時間表記）</td>
+  </tr>
+  <tr>
+    <td>h</td>
+    <td>時間（12時間表記）</td>
+  </tr>
+  <tr>
+    <td>m</td>
+    <td>分</td>
+  </tr>
+  <tr>
+    <td>s</td>
+    <td>秒</td>
+  </tr>
+</table>
+<h3>tag</h3>
+<p>separator：複数のタグを区切る文字を表します。デフォルトは &quot; &quot; （空白文字）です。</p>
+<h3>text</h3>
+<p>number：保持する番号を指定します。例えば、保持したい項目が2つある場合は、
+1つ目に&quot;1&quot;、2つ目に&quot;2&quot;と指定します。
+1から順に並んでいる必要はありません。この値は省略できません。</p>
+<h3>expression</h3>
+<p>式を計算して、結果を出力します。入力時には無視されます。</p>
+<p>val：計算式を表します。view, res, mylist の文字が使えます（再生数、コメント数、マイリスト数）。この値は省略できません。</p>
+<p>例：val=&quot;mylist*100/view&quot;</p>
+<p>この例では「マイリスト数×100÷再生数」を計算して出力します。</p>
+<p>int(...) と書くと小数値を切り捨てます。int(mylist*100/view) で「マイリスト数×100÷再生数」の小数を切り捨てた値になります。</p>
+<p>seido：結果を小数第何位まで表示するかを指定します。
+例えば、値 54.321 は、&quot;2&quot; と指定すると 54.32、&quot;3&quot; と指定すると 54.321、&quot;0&quot; と指定すると 54 と表示されます。デフォルトでは &quot;0&quot; です。</p>
+<p>rounding：値の切り捨て、切り上げ、四捨五入を指定します。
+&quot;floor&quot; で切り捨て、&quot;ceil&quot; で切り上げ、&quot;nearest&quot; で四捨五入になります。デフォルトでは &quot;floor&quot; です。</p>
+<p>comma：出力する数字にカンマをつけるかを指定します(&quot;on&quot; または &quot;off&quot;)。デフォルトでは &quot;on&quot; です。</p>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
